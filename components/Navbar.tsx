@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { IndonesiaFlag, UKFlag } from "./ui/flags";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -72,10 +73,10 @@ const Navbar = () => {
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between md:justify-center transition-all duration-500 ${isScrolled
-                    ? "py-4 px-6 bg-white/95 backdrop-blur-md shadow-sm"
+                    ? "py-4 px-6 bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none"
                     : isDarkSection
-                        ? "px-6 md:px-8 py-6 bg-black/80 md:bg-white/0 backdrop-blur-md md:backdrop-blur-none"
-                        : "px-6 md:px-8 py-6 bg-white/95 md:bg-white/0 backdrop-blur-md md:backdrop-blur-none"
+                        ? "px-6 md:px-8 py-6 bg-black/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none"
+                        : "px-6 md:px-8 py-6 bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none"
                     }`}
             >
                 {/* Mobile Logo (Always visible on mobile) */}
@@ -134,11 +135,11 @@ const Navbar = () => {
                     {/* Inner Language (Slides in from Right) */}
                     <div className={`flex items-center gap-2 text-xs font-semibold transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden whitespace-nowrap border-l pl-4 ml-2 ${isScrolled ? "w-auto opacity-100 translate-x-0" : "w-0 opacity-0 translate-x-10 border-none pl-0 ml-0"
                         } ${isDarkSection ? "border-gray-700 text-white" : "border-gray-200 text-black"}`}>
-                        <button onClick={() => setLanguage('ID')} className={`flex items-center gap-1 hover:opacity-70 transition-colors ${language === 'ID' ? (isDarkSection ? 'text-white' : 'text-black') : 'text-gray-400'}`}>
-                            ID
+                        <button onClick={() => setLanguage('ID')} className={`flex items-center gap-1.5 hover:opacity-70 transition-colors ${language === 'ID' ? (isDarkSection ? 'text-white' : 'text-black') : 'text-gray-400'}`}>
+                            <IndonesiaFlag className="w-4 h-3" /> ID
                         </button>
-                        <button onClick={() => setLanguage('EN')} className={`flex items-center gap-1 hover:opacity-70 transition-colors ${language === 'EN' ? (isDarkSection ? 'text-white' : 'text-black') : 'text-gray-400'}`}>
-                            EN
+                        <button onClick={() => setLanguage('EN')} className={`flex items-center gap-1.5 hover:opacity-70 transition-colors ${language === 'EN' ? (isDarkSection ? 'text-white' : 'text-black') : 'text-gray-400'}`}>
+                            <UKFlag className="w-4 h-3" /> EN
                         </button>
                     </div>
                 </div>
@@ -148,11 +149,11 @@ const Navbar = () => {
                     className={`hidden md:flex absolute right-8 items-center gap-3 text-xs font-semibold transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${isScrolled ? "opacity-0 -translate-x-32 scale-75 pointer-events-none" : "opacity-100 translate-x-0 scale-100"
                         } ${isDarkSection && !isScrolled ? "text-white" : "text-black"}`}
                 >
-                    <button onClick={() => setLanguage('ID')} className={`flex items-center gap-1 hover:opacity-70 transition-colors ${language === 'ID' ? (isDarkSection && !isScrolled ? 'text-white' : 'text-black') : 'text-gray-400'}`}>
-                        🇮🇩 ID
+                    <button onClick={() => setLanguage('ID')} className={`flex items-center gap-1.5 hover:opacity-70 transition-colors ${language === 'ID' ? (isDarkSection && !isScrolled ? 'text-white' : 'text-black') : 'text-gray-400'}`}>
+                        <IndonesiaFlag className="w-4 h-3" /> ID
                     </button>
-                    <button onClick={() => setLanguage('EN')} className={`flex items-center gap-1 hover:opacity-70 transition-colors ${language === 'EN' ? (isDarkSection && !isScrolled ? 'text-white' : 'text-black') : 'text-gray-400'}`}>
-                        🇬🇧 EN
+                    <button onClick={() => setLanguage('EN')} className={`flex items-center gap-1.5 hover:opacity-70 transition-colors ${language === 'EN' ? (isDarkSection && !isScrolled ? 'text-white' : 'text-black') : 'text-gray-400'}`}>
+                        <UKFlag className="w-4 h-3" /> EN
                     </button>
                 </div>
 
@@ -264,14 +265,14 @@ const Navbar = () => {
                                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${language === 'ID' ? 'bg-black text-white' : 'text-gray-600 hover:bg-gray-100'
                                     }`}
                             >
-                                🇮🇩 ID
+                                <IndonesiaFlag className="w-5 h-4" /> ID
                             </button>
                             <button
                                 onClick={() => setLanguage('EN')}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${language === 'EN' ? 'bg-black text-white' : 'text-gray-600 hover:bg-gray-100'
                                     }`}
                             >
-                                🇬🇧 EN
+                                <UKFlag className="w-5 h-4" /> EN
                             </button>
                         </div>
                     </div>
