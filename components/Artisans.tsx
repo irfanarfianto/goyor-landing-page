@@ -85,6 +85,50 @@ const Artisans = () => {
                     ))}
                 </div>
 
+                {/* Video Showcase */}
+                <div className="mt-20 max-w-5xl mx-auto">
+                    <div className="text-center mb-8">
+                        <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-wide text-white mb-3">
+                            {t.artisans.video.title}
+                        </h3>
+                        <p className="text-gray-400 text-sm">
+                            {t.artisans.video.subtitle}
+                        </p>
+                    </div>
+
+                    <div className="relative group rounded-xl overflow-hidden shadow-2xl">
+                        {/* Video Placeholder */}
+                        <div className="relative aspect-video bg-gray-900">
+                            <img
+                                src="https://placehold.co/1280x720/1a1a1a/white?text=ATBM+Weaving+Process+Video"
+                                alt="ATBM Process Video"
+                                className="w-full h-full object-cover opacity-70"
+                            />
+
+                            {/* Play Button Overlay */}
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-colors cursor-pointer">
+                                <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl">
+                                    <svg className="w-10 h-10 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            {/* Duration Badge */}
+                            <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1 rounded text-xs font-semibold">
+                                10:24
+                            </div>
+                        </div>
+
+                        {/* Video Caption */}
+                        <div className="bg-gray-900 border-t border-gray-800 p-6">
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                                <span className="font-bold text-white">Catatan:</span> {t.artisans.video.caption}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     );

@@ -56,6 +56,10 @@ const Collection = () => {
                                             alt={tier.title}
                                             className="w-full h-full object-cover object-center"
                                         />
+                                        {/* Limited Stock Badge */}
+                                        <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full shadow-lg text-xs font-bold uppercase tracking-wide animate-pulse">
+                                            {t.collection.limitedStock}
+                                        </div>
                                         {/* Price Tag Floating */}
                                         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm text-xs font-bold uppercase tracking-wide">
                                             {tier.price}
