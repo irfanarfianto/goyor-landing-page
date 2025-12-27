@@ -18,7 +18,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, autoPlayInterval = 3000 }) 
 
     return (
         <div
-            className="w-full aspect-[4/3] md:aspect-[16/7] grid grid-cols-4 gap-2 md:gap-6 overflow-visible relative text-white"
+            className="w-full aspect-[16/9] md:aspect-[21/9] grid grid-cols-4 gap-2 md:gap-6 overflow-visible relative text-white"
             style={{ perspective: '1000px' }} // Perspective Container
         >
             {/* Render 4 Slots */}
