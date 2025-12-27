@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { IndonesiaFlag, UKFlag } from "./ui/flags";
+import { SCROLL } from "../utils/constants";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
     useEffect(() => {
         const handleScroll = () => {
             // 1. Handle Navbar resizing
-            setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > SCROLL.navbarScrollThreshold);
 
             // 2. Handle Active Section Detection
             const sections = ['home', 'philosophy', 'collection', 'testimonials', 'artisans', 'contact'];

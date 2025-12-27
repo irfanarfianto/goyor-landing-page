@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { useLanguage } from "../context/LanguageContext";
+import { PLACEHOLDER_IMAGES } from "../utils/constants";
 
 const Artisans = () => {
     const { t } = useLanguage();
@@ -9,17 +10,17 @@ const Artisans = () => {
     const steps = [
         {
             key: 'spinning',
-            image: "https://placehold.co/600x400/2a2a2a/white?text=Yarn+Spinning",
+            image: PLACEHOLDER_IMAGES.process.spinning,
             ...t.artisans.steps.spinning
         },
         {
             key: 'tying',
-            image: "https://placehold.co/600x400/4a4a4a/white?text=Ikat+Tying",
+            image: PLACEHOLDER_IMAGES.process.dyeing,
             ...t.artisans.steps.tying
         },
         {
             key: 'weaving',
-            image: "https://placehold.co/600x400/6a6a6a/white?text=ATBM+Weaving",
+            image: PLACEHOLDER_IMAGES.process.weaving,
             ...t.artisans.steps.weaving
         }
     ];

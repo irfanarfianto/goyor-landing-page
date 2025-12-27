@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { SCROLL, COLORS, getWhatsAppUrl } from "../utils/constants";
 
 const FloatingWhatsApp = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -7,7 +8,7 @@ const FloatingWhatsApp = () => {
     useEffect(() => {
         // Show button after scrolling down a bit
         const handleScroll = () => {
-            if (window.scrollY > 300) {
+            if (window.scrollY > SCROLL.floatingWhatsAppThreshold) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
@@ -19,14 +20,23 @@ const FloatingWhatsApp = () => {
     }, []);
 
     const handleClick = () => {
-        window.open("https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Sarung%20Goyor%20Pemalang", "_blank");
+        window.open(getWhatsAppUrl(), "_blank");
     };
 
     return (
         <button
             onClick={handleClick}
-            className={`fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full p-4 shadow-2xl transition-all duration-300 group ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
+            className={`fixed bottom-6 right-6 z-50 text-white rounded-full p-4 shadow-2xl transition-all duration-300 group ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
                 }`}
+            style={{
+                backgroundColor: COLORS.whatsapp,
+            }}
+            onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = COLORS.whatsappHover;
+            }}
+            onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = COLORS.whatsapp;
+            }}
             aria-label="Chat on WhatsApp"
         >
             {/* WhatsApp Icon */}

@@ -2,17 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "./Carousel";
 import { useLanguage } from "../context/LanguageContext";
+import { PLACEHOLDER_IMAGES, ANIMATION } from "../utils/constants";
 
-const heroImages = [
-    "https://placehold.co/300x700/1a1a1a/white?text=Kain+Tenun+1",
-    "https://placehold.co/300x700/2b2b2b/white?text=Motif+Klasik+2",
-    "https://placehold.co/300x700/3c3c3c/white?text=Detail+Benang+3",
-    "https://placehold.co/300x700/4d4d4d/white?text=Alat+Tenun+4",
-    "https://placehold.co/300x700/5e5e5e/white?text=Pewarna+Alami+5",
-    "https://placehold.co/300x700/6f6f6f/white?text=Proses+Celup+6",
-    "https://placehold.co/300x700/808080/white?text=Tenun+ATBM+7",
-    "https://placehold.co/300x700/919191/white?text=Gallery+Showcase+8",
-];
+const heroImages = [...PLACEHOLDER_IMAGES.hero];
 
 const Hero = () => {
     const { t } = useLanguage();
@@ -66,7 +58,7 @@ const Hero = () => {
 
                 {/* MODULAR CAROUSEL */}
                 <div className="w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                    <Carousel images={heroImages} autoPlayInterval={3000} />
+                    <Carousel images={heroImages} />
                 </div>
 
                 <p className="mt-8 text-gray-500 text-sm max-w-xl text-center leading-relaxed">

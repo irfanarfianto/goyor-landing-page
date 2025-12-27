@@ -1,12 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { ANIMATION } from "../utils/constants";
 
 interface CarouselProps {
     images: string[];
     autoPlayInterval?: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images, autoPlayInterval = 3000 }) => {
+const Carousel: React.FC<CarouselProps> = ({ images, autoPlayInterval = ANIMATION.carousel.autoPlayInterval }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
