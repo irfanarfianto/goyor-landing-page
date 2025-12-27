@@ -58,10 +58,12 @@ const Artisans = () => {
                         >
                             {/* Background Image with Hover Zoom */}
                             <div className="absolute inset-0 w-full h-full">
-                                <img
+                                <Image
                                     src={step.image}
                                     alt={step.title}
-                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+                                    fill
+                                    className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+                                    unoptimized
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
                             </div>
@@ -100,10 +102,12 @@ const Artisans = () => {
                     <div className="relative group rounded-xl overflow-hidden shadow-2xl">
                         {/* Video Placeholder */}
                         <div className="relative aspect-video bg-gray-900">
-                            <img
+                            <Image
                                 src="https://placehold.co/1280x720/1a1a1a/white?text=ATBM+Weaving+Process+Video"
                                 alt="ATBM Process Video"
-                                className="w-full h-full object-cover opacity-70"
+                                fill
+                                className="object-cover opacity-70"
+                                unoptimized
                             />
 
                             {/* Play Button Overlay */}

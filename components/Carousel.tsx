@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { ANIMATION } from "../utils/constants";
 
 interface CarouselProps {
@@ -63,25 +64,29 @@ const Carousel: React.FC<CarouselProps> = ({ images, autoPlayInterval = ANIMATIO
                         }}
                     >
                         {/* Layer 1: Gambar Sebelumnya (Background) - Statis */}
-                        <img
+                        <Image
                             src={prevSrc}
                             alt={`Prev Slide ${prevImageIndex}`}
-                            className="absolute inset-0 w-full h-full object-cover block"
+                            fill
+                            className="object-cover block"
                             style={{
                                 transform: 'scale(1.0)'
                             }}
+                            unoptimized
                         />
 
                         {/* Layer 2: Gambar Baru (Foreground) - Sliding In */}
                         {/* Wrapper ini akan re-mount setiap imageIndex berubah, memicu animasi slide */}
                         <div key={imageIndex} className="absolute inset-0 w-full h-full animate-slide-left z-20 overflow-hidden">
-                            <img
+                            <Image
                                 src={src}
                                 alt={`Current Slide ${imageIndex}`}
-                                className="w-full h-full object-cover block"
+                                fill
+                                className="object-cover block"
                                 style={{
                                     transform: 'scale(1.0)'
                                 }}
+                                unoptimized
                             />
                             {/* Lighting Effect menempel pada foreground image agar ikut bergerak */}
                             <div

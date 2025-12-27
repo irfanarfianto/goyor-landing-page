@@ -58,13 +58,13 @@ const Testimonials = () => {
                         >
                             {/* Quote Icon */}
                             <div className="absolute top-6 right-6 text-6xl text-gray-100 group-hover:text-gray-200 transition-colors">
-                                "
+                                &rdquo;
                             </div>
 
                             {/* Content */}
                             <div className="relative z-10">
                                 <p className="text-gray-700 text-sm leading-relaxed mb-6 italic">
-                                    "{item.text}"
+                                    &ldquo;{item.text}&rdquo;
                                 </p>
 
                                 {/* Author Info */}

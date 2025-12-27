@@ -45,15 +45,17 @@ const Collection = () => {
 
                 {/* Collection Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                    {tiers.map((tier, index) => (
+                    {tiers.map((tier) => (
                         <CardSpotlight key={tier.key} className="group hover:shadow-2xl hover:shadow-emerald-500/[0.1] transition-all duration-300 flex flex-col h-full">
 
                             {/* Image */}
                             <div className="relative h-[250px] w-full overflow-hidden rounded-xl mb-6 group-hover:shadow-xl transition-shadow">
-                                <img
+                                <Image
                                     src={tier.image}
                                     alt={tier.title}
-                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                    fill
+                                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                    unoptimized
                                 />
                                 {/* Limited Stock Badge */}
                                 <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full shadow-lg text-xs font-bold uppercase tracking-wide animate-pulse">

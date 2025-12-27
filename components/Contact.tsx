@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { useLanguage } from "../context/LanguageContext";
 import { COLORS, getWhatsAppUrl, SOCIAL_MEDIA } from "../utils/constants";
 
@@ -113,10 +114,12 @@ const Contact = () => {
                     {/* Right: Decorative Pattern */}
                     <div className="hidden md:flex items-center justify-center">
                         <div className="relative w-full h-[400px] bg-gray-100 rounded-xl overflow-hidden group">
-                            <img
+                            <Image
                                 src="https://placehold.co/600x800/f5f5f5/333?text=Sarung+Goyor+Pattern"
                                 alt="Decorative Pattern"
-                                className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
+                                fill
+                                className="object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
+                                unoptimized
                             />
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center">

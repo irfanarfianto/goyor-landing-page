@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { useLanguage } from "../context/LanguageContext";
 
 const Philosophy = () => {
@@ -38,10 +39,12 @@ const Philosophy = () => {
                     {/* LEFT BLOCK: Hablum Minallah (The Lines) */}
                     {/* Represents Vertical & Horizontal connection */}
                     <div className="lg:col-span-5 relative group border border-gray-200 overflow-hidden bg-white rounded-xl">
-                        <img
+                        <Image
                             src="https://placehold.co/600x900/111/white?text=Geometris+|+Garis"
                             alt="Geometric Lines"
-                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            fill
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            unoptimized
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
                         <div className="absolute bottom-0 left-0 right-0 p-8 bg-white/95 backdrop-blur-md border-t border-gray-100 transform translate-y-0 lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-500 ease-out">
@@ -61,10 +64,12 @@ const Philosophy = () => {
 
                         {/* TOP RIGHT: Nature (Flora) */}
                         <div className="relative border border-gray-200 overflow-hidden group rounded-xl">
-                            <img
+                            <Image
                                 src="https://placehold.co/800x400/2a2a2a/white?text=Flora+|+Kembangan"
                                 alt="Floral Motifs"
-                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                fill
+                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                unoptimized
                             />
                             <div className="absolute top-6 right-6 bg-white/80 backdrop-blur border border-white/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-black rounded-full shadow-sm">
                                 {t.philosophy.bento.nature.tag}
@@ -101,7 +106,7 @@ const Philosophy = () => {
                 {/* 3. Footer Statement */}
                 <div className="text-center pt-8 border-t border-gray-100">
                     <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-3xl mx-auto italic">
-                        "{t.philosophy.footer.text}"
+                        &ldquo;{t.philosophy.footer.text}&rdquo;
                     </p>
                 </div>
 

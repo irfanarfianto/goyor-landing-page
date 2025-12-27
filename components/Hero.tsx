@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Carousel from "./Carousel";
 import { useLanguage } from "../context/LanguageContext";
-import { PLACEHOLDER_IMAGES, ANIMATION } from "../utils/constants";
+import { PLACEHOLDER_IMAGES } from "../utils/constants";
 
 const heroImages = [...PLACEHOLDER_IMAGES.hero];
 
